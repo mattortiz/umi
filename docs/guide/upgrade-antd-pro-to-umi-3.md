@@ -7,15 +7,15 @@ translateHelp: true
 # Upgrade Ant Design Pro to Umi 3
 
 
-迁移到 Umi 3 分三步，不到 10 分钟即可完成迁移：
+Migrate to Umi 3 in three steps, less than 10 minutes to complete the migration：
 
-1. **依赖处理**
-1. **配置层迁移**
-1. **代码层修改**
+1. **Dependency Processing**
+2. **Configuration layer migration**
+3. **Code layer modification**
 
-### 依赖处理
+### Dependency processing
 
-项目的 `package.json` 需要升级 umi，并替换掉对应的 umi 插件。
+The `package.json` of the project needs to upgrade umi and replace the corresponding umi plugin.
 
 ```diff
 {
@@ -37,11 +37,11 @@ translateHelp: true
 }
 ```
 
-执行下 `npm install` 重装依赖。
+Execute `npm install` to reinstall dependencies.
 
-### 配置层迁移
+### Configuration layer migration
 
-根据 [Umi 3 配置](../config) ，有**修改的配置项**如下 `config/config.ts` ：
+According to [Umi 3 Configuration](../config), there are **modified configuration items** as follows: `config/config.ts`:
 
 ```typescript
 import { defineConfig, utils } from 'umi';
@@ -49,8 +49,9 @@ import { defineConfig, utils } from 'umi';
 const { winPath } = utils;
 
 export default defineConfig({
-  // 通过 package.json 自动挂载 umi 插件，不需再次挂载
+  // Automatically mount the umi plugin through package.json, no need to mount again
   // plugins: [],
+  
   antd: {},
   dva: {
     hmr: true,
